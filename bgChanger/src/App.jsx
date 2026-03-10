@@ -1,12 +1,11 @@
 import { useCallback, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Button from './components/Buttons'
 
 function App() {
  const [color, setColor] = useState("black")
 
- const setbg = (bgColor)=>{
+ const setBackgroundColor = (bgColor)=>{
      setColor(bgColor)
      localStorage.setItem('color',bgColor)
  }
@@ -14,11 +13,11 @@ function App() {
   return (
       <div className="bg pt-5" style={{backgroundColor : localStorage.getItem('color') || color}}>
          <div className="btns flex justify-center-safe content-center" >
-            <button className='m-1' style={{backgroundColor : 'red'}} onClick={()=>{ setbg('red') }}>red</button>
-            <button className='m-1' style={{backgroundColor : 'blue'}} onClick={()=>{ setbg('blue') }}>blue</button>
-            <button className='m-1' style={{backgroundColor : 'yellow', color:'black'}} onClick={()=>{ setbg('yellow') }}>yellow</button>
-            <button className='m-1' style={{backgroundColor : 'green'}} onClick={()=>{ setbg('green') }}>green</button>
-            <button className='m-1' style={{backgroundColor : 'gray'}} onClick={()=>{ setbg('gray') }}>gray</button>
+            <Button color="red" method={setBackgroundColor}/>
+            <Button color="blue" method={setBackgroundColor}/>
+            <Button color="yellow" method={setBackgroundColor}/>
+            <Button color="green" method={setBackgroundColor}/>
+            <Button color="gray" method={setBackgroundColor}/>
          </div>
       </div>
   )
