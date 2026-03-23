@@ -8,6 +8,7 @@ import { useSelector } from "react-redux"
 function App() {
 const todos = useSelector(state => state.todos)
 
+
   return (
     <>
        <div className="todo-app">
@@ -17,7 +18,7 @@ const todos = useSelector(state => state.todos)
 
           {
             todos.map((todo)=>(
-            <li className="todo-item" key={todo.id}>
+            <li className={`todo-item ${todo.complated ? 'active' : '' }`}  key={todo.id}>
               <Item todo={todo}/>
             </li>
           ))}

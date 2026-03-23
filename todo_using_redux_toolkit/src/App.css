@@ -106,3 +106,7 @@ color:white;
 background:#ef4444;
 color:white;
 }
+
+.active{
+   background-color: rgb(134, 218, 134);
+}
